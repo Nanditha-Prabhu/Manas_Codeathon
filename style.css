@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body{
+    background: url('image_files/playground.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.row{
+    height: 100vh;
+    margin-left: 40%;
+    margin-right: 60%;
+}
+
+.col{
+    font-size: xx-large;
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+
+    }
+  }
