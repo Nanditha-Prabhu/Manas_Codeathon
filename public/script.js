@@ -1,4 +1,4 @@
-let digits = document.querySelectorAll('.col');
+let digits = document.querySelectorAll('.digit');
 let delay = 2000;
 
 digits.forEach((element, index) => {
@@ -10,4 +10,3 @@ digits.forEach((element, index) => {
     }, 0);
 
 });
-
