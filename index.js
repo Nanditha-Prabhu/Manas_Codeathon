@@ -10,6 +10,13 @@ app.get("/",function(req,res){
     res.render("first");
 })
 
+app.get("/second",function(req,res){
+    res.render("second");
+})
+app.get("/third",function(req,res){
+    res.render("third");
+})
+
 app.listen(3000,function(){
     console.log("Running");
 })
