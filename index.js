@@ -7,26 +7,64 @@ app.set("view engine","ejs");
 app.use(express.static("public"));
 
 app.get("/",function(req,res){
-    res.render("first");
+    res.render("first",{userName:"Satwik Kamath",score:0});
 })
 
 app.post("/second",function(req,res){
-    res.render("second");
+    userName= req.body.userName;
+    ans=req.body.ans;
+    score=req.body.score;
+
+    if(ans=="1")
+        score++;
+
+
+    res.render("second",{userName:userName,score:score});
 })
 app.post("/third",function(req,res){
-    res.render("third");
+    userName= req.body.userName;
+    ans=req.body.ans;
+    score=req.body.score;
+
+    if(ans=="1")
+        score++;
+    res.render("third",{userName:userName,score:score});
 })
 app.post("/fourth",function(req,res){
-    res.render("fourth");
+    userName= req.body.userName;
+    ans=req.body.ans;
+    score=req.body.score;
+
+    if(ans=="1")
+        score++;
+    res.render("fourth",{userName:userName,score:score});
 })
 app.post("/fifth",function(req,res){
-    res.render("fifth");
+    userName= req.body.userName;
+    ans=req.body.ans;
+    score=req.body.score;
+
+    if(ans=="1")
+        score++;
+    res.render("fifth",{userName:userName,score:score});
 })
 app.post("/sixth",function(req,res){
-    res.render("sixth");
+    userName= req.body.userName;
+    ans=req.body.ans;
+    score=req.body.score;
+
+    if(ans=="1")
+        score++;
+    res.render("sixth",{userName:userName,score:score});
 })
 app.post("/seventh",function(req,res){
-    res.render("seventh");
+    userName= req.body.userName;
+    ans=req.body.ans;
+    score=req.body.score;
+
+    if(ans=="1")
+        score++;
+    res.render("seventh",{userName:userName,score:score});
 })
 
 app.listen(3000,function(){

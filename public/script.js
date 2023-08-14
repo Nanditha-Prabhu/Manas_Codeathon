@@ -1,5 +1,5 @@
 let digits = document.querySelectorAll('.digit');
-let delay = 2000;
+let delay = 1000;
 let totalTime;
 
 digits.forEach((element, index) => {

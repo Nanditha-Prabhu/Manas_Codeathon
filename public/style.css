@@ -53,7 +53,6 @@ body{
   text-decoration: none;
 }
 
-
 @keyframes btnAnimation {
   0% {
     transform: scale(0);

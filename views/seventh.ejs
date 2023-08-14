@@ -1,5 +1,6 @@
 <%- include("partials/header.ejs") %>
-
+<h3><%= userName %></h3>
+<h6><%= score %></h6>
     <div class="container text-center">
         <div class="numbers">
             <div class="row justify-content-md-center row-cols-auto align-items-center">
@@ -35,19 +36,27 @@
         <div class="options dispNone">
             <div class="row row-cols-2 justify-content-md-center row-cols-auto align-items-center">
                 <form action="/second" method="post">
-                    <input type="text" name="ans" value ="0" id="" hidden>
+                    <input type="text" name="ans" value ="1" id="" hidden>
+                    <input type="text" name="userName" value ="<%= userName %>" id="" hidden>
+                     <input type="text" name="score" value ="<%= score %>" id="" hidden>
                     <button class="submitBtn" type="submit">523918746</button>
                 </form>
                 <form action="/second" method="post">
                     <input type="text" name="ans" value ="0" id="" hidden>
+                    <input type="text" name="userName" value ="<%= userName %>" id="" hidden>
+                     <input type="text" name="score" value ="<%= score %>" id="" hidden>
                     <button class="submitBtn" type="submit">523918745</button>
                 </form>
                 <form action="/second" method="post">
                     <input type="text" name="ans" value ="0" id="" hidden>
+                    <input type="text" name="userName" value ="<%= userName %>" id="" hidden>
+                     <input type="text" name="score" value ="<%= score %>" id="" hidden>
                     <button class="submitBtn" type="submit">523918749</button>
                 </form>
                 <form action="/second" method="post">
                     <input type="text" name="ans" value ="0" id="" hidden>
+                    <input type="text" name="userName" value ="<%= userName %>" id="" hidden>
+                     <input type="text" name="score" value ="<%= score %>" id="" hidden>
                     <button class="submitBtn" type="submit">523918744</button>
                 </form>
             </div>
