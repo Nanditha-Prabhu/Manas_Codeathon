@@ -64,7 +64,7 @@ app.post("/seventh",function(req,res){
 
     if(ans=="1")
         score++;
-    res.render("seventh",{userName:userName,score:score});
+    res.render("end");
 })
 
 app.listen(3000,function(){
