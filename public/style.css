@@ -110,6 +110,18 @@ body {
   animation: btnAnimation 1s ease-in-out;
 }
 
+.resetBtn{
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #FF5757;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
 .submitBtn:hover {
   text-decoration: none;
 }
