@@ -7,8 +7,14 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-    res.render("main", { level: 1, userName: "Satwik Kamath", score: 0, numbers: [3, 6, 5], formPost: "second", options: [{ option: 355, value: 0 }, { option: 368, value: 0 }, { option: 362, value: 0 }, { option: 365, value: 1 }] });
+    res.render("userMainPage");
 })
+app.get("/hi", function (req, res) {
+    res.render("homePage");
+})
+// app.get("/", function (req, res) {
+//     res.render("main", { level: 1, userName: "Satwik Kamath", score: 0, numbers: [3, 6, 5], formPost: "second", options: [{ option: 355, value: 0 }, { option: 368, value: 0 }, { option: 362, value: 0 }, { option: 365, value: 1 }] });
+// })
 app.post("/second", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
@@ -71,13 +77,13 @@ app.post("/end", function (req, res) {
     res.render("end");
 })
 
-app.post("/reset",function(req,res){
+app.post("/reset", function (req, res) {
     userName = req.body.userName;
 
     res.render("main", { level: 1, userName: userName, score: 0, numbers: [3, 6, 5], formPost: "second", options: [{ option: 355, value: 0 }, { option: 368, value: 0 }, { option: 362, value: 0 }, { option: 365, value: 1 }] });
 
 })
-app.post("/exit",function(req,res){
+app.post("/exit", function (req, res) {
     userName = req.body.userName;
 
     res.render("end");
