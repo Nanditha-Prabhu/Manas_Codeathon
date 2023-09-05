@@ -144,6 +144,7 @@ document.getElementById('signUpSubmit').addEventListener('click',function(e){
     e.preventDefault();
     console.log("hi")
     let signUpName=document.getElementById('signUpName').value
+    let signUpAge=document.getElementById('signUpAge').value
    
     let signUpPassword = document.getElementById('signUpPassword').value;
     let signUpcpassword = document.getElementById('signUpcpassword').value;
@@ -158,7 +159,8 @@ document.getElementById('signUpSubmit').addEventListener('click',function(e){
         const mainfunc = async ()=>{
             sendData ={
                 name: signUpName,
-                password: signUpPassword
+                password: signUpPassword,
+                userAge:signUpAge
             }
             console.log(sendData)
             response = await signUpFromMain(sendData)
