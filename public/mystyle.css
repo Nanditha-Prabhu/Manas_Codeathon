@@ -78,10 +78,10 @@ body {
   font-size: 50px;
 }
 
-.numbers,
+/* .numbers,
 .options {
   height: 30vh;
-}
+} */
 
 @keyframes fadeOut {
   0% {
@@ -102,12 +102,17 @@ body {
   -moz-border-radius: 28;
   border-radius: 28px;
   font-family: Arial;
-  color: #ffffff;
+  color: black;
   font-size: 20px;
-  background: #FF5757;
+  background: #ffebcd;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   animation: btnAnimation 1s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Orbitron', sans-serif;
+}
+.submitBtn:hover, .resetBtn:hover{
+  transform: scale(1.1);
 }
 
 .resetBtn{
@@ -117,14 +122,16 @@ body {
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  background: #FF5757;
+  background: #184e77;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Orbitron', sans-serif;
 }
 
-.submitBtn:hover {
+/* .submitBtn:hover {
   text-decoration: none;
-}
+} */
 
 @keyframes btnAnimation {
   0% {
