@@ -14,6 +14,10 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+app.get("/motivation",function(req,res){
+    res.render("motivation")
+})
+
 app.get("/", function (req, res) {
     res.render("homePage");
 })
@@ -61,6 +65,9 @@ app.post("/checkSignUpInfo",function(req,res){
     })
 })
 
+app.get("/level1",function(req,res){
+    res.render("playground")
+})
 app.post("/second", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
