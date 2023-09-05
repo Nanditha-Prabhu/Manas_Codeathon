@@ -89,14 +89,16 @@
     <div class="form-content2">
         <span id="span-login">&times;</span>
         <h1 class="display-1 ">LOGIN</h1>
-        <form action="/login" class="form" method="post">
+        <form id="loginForm">
+
+        
             <div class="form-ele">
                 <label for="name">NAME</label>
-                <input type="text" placeholder="What's your name?">
+                <input type="text" placeholder="What's your name?" id="loginName">
             </div>
             <div class="form-ele">
                 <label for="password">PASSWORD</label>
-                <input type="password" placeholder="You remember your password. right?">
+                <input type="password" placeholder="You remember your password. right?" id="loginPassword">
             </div>
             <div class="form-ele">
                 <a href="">Forgot Password?</a>
@@ -105,7 +107,7 @@
                 <button type="reset" class="reset-ele ">RESET</button>
             </div>
             <div class="form-ele">
-                <button type="submit" class="submit-ele ">SUBMIT</button>
+                <button class="submit-ele " id="loginSubmit">SUBMIT</button>
             </div>
         </form>
     </div>

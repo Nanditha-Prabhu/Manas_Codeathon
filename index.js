@@ -2,6 +2,7 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const app = express();
 
+app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -15,6 +16,22 @@ app.get("/hi", function (req, res) {
 // app.get("/", function (req, res) {
 //     res.render("main", { level: 1, userName: "Satwik Kamath", score: 0, numbers: [3, 6, 5], formPost: "second", options: [{ option: 355, value: 0 }, { option: 368, value: 0 }, { option: 362, value: 0 }, { option: 365, value: 1 }] });
 // })
+
+
+app.post("/checkLoginInfo", function (req, res) {
+    receivedName = req.body.name;
+    receivedPassword = req.body.password;
+    console.log(req.body);
+
+    if(receivedName=="satwik")
+        res.json({msg: 1});
+    else
+        res.json({msg: 0});
+})
+
+app.get("/loginAfterCheck",function(req,res){
+    res.render("userMainPage");
+})
 app.post("/second", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
