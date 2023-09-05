@@ -101,9 +101,7 @@
                 <label for="password">PASSWORD</label>
                 <input type="password" placeholder="You remember your password. right?" id="loginPassword">
             </div>
-            <div class="form-ele">
-                <a href="">Forgot Password?</a>
-            </div>
+
             <div class="form-ele">
                 <button type="reset" class="reset-ele ">RESET</button>
             </div>
@@ -130,15 +128,15 @@
     </div>
 
     <!-- Instructions -->
-    <div class="instructions">
-        <span class="instruct-text" id="instructions">
+    <div class="instructions" style="overflow-x: hidden;">
+        <span class="instruct-text reveal1" id="instructions">
             <h2>INSTRUCTIONS</h2>
             <p class="instruct-text-ele">1. Carefully look at numbers being displayed on the screen</p>
             <p class="instruct-text-ele">2. Recall and select the right number from the options</p>
             <p class="instruct-text-ele">3. Complete the level, Try to maximize your score</p>
         </span>
         <img src="image_files/pole2.png" class="instruct-img" alt="mario on the pole">
-        <span class="instruct-text" id="features">
+        <span class="instruct-text reveal2" id="features">
             <h2>FEATURES</h2>
             <p class="instruct-text-ele">Immersive gaming experience</p>
             <p class="instruct-text-ele">Promises entertainment</p>
@@ -146,8 +144,75 @@
         </span>
     </div>
 
+    <div class="faq py-4" id="faq">
+        <h2 class="text-center py-4">Frequently Asked Questions</h2>
+        <div class="accordion py-4" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item my-3 reveal1">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        <strong> How do I sign up for an account on your website?</strong>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        To sign up for an account, simply click on the "Sign Up" button on the homepage and fill out
+                        the registration form with your details.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item my-3 reveal1">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        <strong>Is my personal information safe on your website?</strong>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        We take your privacy and data security seriously. Our website uses industry-standard
+                        encryption protocols to protect your personal information. We do not share your data with
+                        third parties without your consent. For more details, please refer to our Privacy Policy.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item my-3 reveal1">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        <strong>How should I start playing the game?</strong>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        We hope you have signed up and then logged in. After that you can click the 'Play Now' button in
+                        the centre to start playing.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item my-3 reveal1">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseFour">
+                        <strong>How are points calculated?</strong>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        If you select the right option you gain 1 point. If not, you will earn 0 points. There are no
+                        negative points.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- footer -->
-    <footer id="footer">
+    <footer id="footer" style="overflow: hidden;">
         <div class="social-icons">
             <a href=""><i class="fa-brands fa-facebook"></i></a>
             <a href=""><i class="fa-brands fa-instagram"></i></a>
@@ -155,13 +220,13 @@
             <a href=""><i class="fa-brands fa-youtube"></i></a>
             <a href=""><i class="fa fa-envelope"></i></a>
         </div>
-        <div class="footer-nav">
+        <div class="footer-nav reveal2">
             <p><a href="#">Home</a></p>
             <p><a href="https://www.hindustantimes.com/">News</a></p>
             <p><a href="">Motivational Quotes</a></p>
             <p><a href="">About developers</a></p>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom reveal1">
             <p>Copyright &copy; 2023</p>
             <p>Designed with passion</p>
         </div>

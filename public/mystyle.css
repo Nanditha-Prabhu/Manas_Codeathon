@@ -183,3 +183,30 @@ body {
     width: 100%;
   }
 }
+
+
+.reveal1 {
+  position: relative;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal1.active1 {
+  display: block;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.reveal2 {
+  position: relative;
+  transform: translateX(50%);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal2.active2 {
+  display: block;
+  transform: translateX(0);
+  opacity: 1;
+}

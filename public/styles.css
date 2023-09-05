@@ -16,6 +16,32 @@ body {
     color: #fff;
 }
 
+.reveal1 {
+    position: relative;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal1.active1 {
+    display: block;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .reveal2 {
+    position: relative;
+    transform: translateX(50%);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal2.active2 {
+    display: block;
+    transform: translateX(0);
+    opacity: 1;
+  }
+
 /* navbar */
 .navbar{
     background-color: #184e77;
@@ -362,6 +388,26 @@ footer {
     transform: scale(1.1);
 }
 
+/* accordion */
+.faq h2{
+    font-family: 'Orbitron', sans-serif;
+    color: #184e77;
+    text-shadow: 0px 0px 3px #fff;
+}
+
+.accordion{
+    width: 75%;
+    margin: auto ;
+    color: #184e77;
+    background-color: #faddb1;
+    font-family: 'Rajdhani', sans-serif;
+    border: 2px solid #184e77;
+    border-radius: 30px;
+}
+
+.accordion-button, .accordion-body {
+    color: #184e77;
+}
 
 /* media queries for responsiveness */
 @media screen and (max-width: 325px){

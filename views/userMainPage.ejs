@@ -37,8 +37,12 @@
                 <div class="navbar-nav">
                     <a class="nav-link" aria-current="page" href="#about">Home</a>
                     <a class="nav-link" href="/leaderboard">Leaderboard</a>
+                    <form action="/personal" method="post">
+                        <input type="text" name="userName" value="<%= userName %>" hidden>
+                        <button type="submit" class="nav-link" style="color: white;">Personal Best</button>
+                    </form>
                 </div>
-               
+
             </div>
         </div>
     </nav>
@@ -47,7 +51,8 @@
     <div class="intro img-fluid blur">
         <h1 class="display-1">THE MEMORY QUEST</h1>
         <h3>Unlock Your Memory Master!!</h3>
-        <h3 style="color:#EEB868; text-shadow:0px 0px 3px black;">Player Name: <%= userName %></h3>
+        <h3 style="color:#EEB868; text-shadow:0px 0px 3px black;">Player Name: <%= userName %>
+        </h3>
     </div>
 
 

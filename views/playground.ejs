@@ -32,9 +32,7 @@
                 <h2>
                     Score: <%= score %>
                 </h2>
-                <h2>
-                    timer:10 sec
-                </h2>
+
             </div>
 
             <div class="col-6 ">
@@ -73,7 +71,7 @@
                     <% options.forEach(element=> { %>
 
                         <form action="/<%= formPost %>" method="post">
-                            <input type="text" name="level" value="<% level %>" id=""hidden>
+                            <input type="text" name="level" value="<%=level%>" id="" hidden>
                             <input type="text" name="ans" value="<%= element.value %>" id="" hidden>
                             <input type="text" name="userName" value="<%= userName %>" id="" hidden>
                             <input type="text" name="score" value="<%= score %>" id="" hidden>

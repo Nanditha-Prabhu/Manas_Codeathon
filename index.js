@@ -236,7 +236,7 @@ app.post("/end", function (req, res) {
     score = req.body.score;
     level = req.body.level;
     let performance;
-
+    
     if (ans == "1")
         score++;
     if (score == 10)
@@ -297,7 +297,14 @@ app.post("/exit", function (req, res) {
 app.get("/leaderboard",function(req,res){
     res.render("leaderboard")
 })
-
+app.post("/personal",function(req,res){
+   let userName= req.body.userName;
+   
+   GameUser.findOne({ name: userName }).then(function (data) {
+    
+    res.render("personal",{s1:data.level1,s2:data.level2,s3:data.level3})
+})
+})
 app.listen(3000, function () {
     console.log("Running");
 })
