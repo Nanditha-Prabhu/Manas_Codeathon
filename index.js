@@ -21,7 +21,7 @@ app.get("/hi", function (req, res) {
 app.post("/checkLoginInfo", function (req, res) {
     receivedName = req.body.name;
     receivedPassword = req.body.password;
-    console.log(req.body);
+
 
     if(receivedName=="satwik")
         res.json({msg: 1});
@@ -29,8 +29,9 @@ app.post("/checkLoginInfo", function (req, res) {
         res.json({msg: 0});
 })
 
-app.get("/loginAfterCheck",function(req,res){
-    res.render("userMainPage");
+app.post("/loginAfterCheck",function(req,res){
+    userName =req.body.userName;
+    res.render("userMainPage",{userName:userName});
 })
 app.post("/second", function (req, res) {
     userName = req.body.userName;

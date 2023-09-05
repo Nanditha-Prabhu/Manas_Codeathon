@@ -14,6 +14,7 @@ document.getElementById('loginSubmit').addEventListener('click',function(){
     let loginName = document.getElementById('loginName').value;
     let loginPassword = document.getElementById('loginPassword').value;
     const form = document.getElementById('loginForm');
+    // let sendName = document.getElementById('sendName')
     let sendData 
     let response 
     const mainfunc = async ()=>{
@@ -29,8 +30,9 @@ document.getElementById('loginSubmit').addEventListener('click',function(){
         if(response.msg)
         {
             form.action = '/loginAfterCheck'; 
-            form.method = 'get'; 
+            form.method = 'post'; 
             form.submit(); 
+           
         }
         else
         {
