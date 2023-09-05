@@ -39,6 +39,7 @@ closeBtn.addEventListener('click', closeModal2);
 
 /* */
 
+
 const loginFromMain = async (sendData) => {
     let options = {
         method: "POST",
@@ -51,7 +52,8 @@ const loginFromMain = async (sendData) => {
     let response = await p.json()
     return response
 }
-document.getElementById('loginSubmit').addEventListener('click',function(){
+document.getElementById('loginSubmit').addEventListener('click',function(e){
+    e.preventDefault()
     let loginName = document.getElementById('loginName').value;
     let loginPassword = document.getElementById('loginPassword').value;
     const form = document.getElementById('loginForm');
@@ -63,44 +65,96 @@ document.getElementById('loginSubmit').addEventListener('click',function(){
             name: loginName,
             password: loginPassword
         }
-        console.log(sendData)
+        
         response = await loginFromMain(sendData)
 
-        
+        console.log(response)
 
-        if(response.msg)
+        if(response.found)
         {
-            form.action = '/loginAfterCheck'; 
-            form.method = 'post'; 
-            form.submit(); 
+            if(response.passwordCorrect)
+            {
+
+                form.action = '/loginAfterCheck'; 
+                form.method = 'post'; 
+                form.submit(); 
+            }
+            else
+            {
+                alert('Password Incorrect')
+            }
            
         }
         else
         {
-            alert('Password wrong')
+            alert('Account Does Not Exist, Sign Up First')
         }
     }
    
     mainfunc()
 })
 
-document.getElementById('signUpSubmit').addEventListener('click',function(){
-    
+
+const signUpFromMain = async (sendData) => {
+    let options = {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(sendData),
+    }
+    console.log(sendData)
+    let p = await fetch('/checkSignUpInfo', options)
+    let response = await p.json()
+    return response
+}
+
+document.getElementById('signUpSubmit').addEventListener('click',function(e){
+    e.preventDefault();
+    console.log("hi")
+    let signUpName=document.getElementById('signUpName').value
+   
     let signUpPassword = document.getElementById('signUpPassword').value;
     let signUpcpassword = document.getElementById('signUpcpassword').value;
-    const form = document.getElementById('signUpForm');
-
+    
+    let sendData 
+    let response 
+    console.log(signUpPassword)
+    console.log(signUpcpassword)
     if(signUpPassword== signUpcpassword)
     {
-        form.action = '/signUp'; 
-        form.method = 'post'; 
-        form.submit(); 
-        alert('Account created. Go to Login Page')
+ 
+        const mainfunc = async ()=>{
+            sendData ={
+                name: signUpName,
+                password: signUpPassword
+            }
+            console.log(sendData)
+            response = await signUpFromMain(sendData)
+    
+            
+    
+            if(response.msg)
+            {
+                
+                alert('User Name exists')
+            }
+            else
+            {
+                alert("Account created. Go to Login Page")
+                
+            }
+        }
+       
+        mainfunc() 
+        
     }
     else
     {
         alert('Password and Confirm password do not match')
     }
-       
+      
+    
+
         
 })

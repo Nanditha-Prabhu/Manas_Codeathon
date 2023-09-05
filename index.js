@@ -1,32 +1,38 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const app = express();
-
+const mongoose = require('mongoose');
+mongoose.connect("mongodb+srv://satwikroopa:Roopa70263@fruitdb.8sxipgz.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true });
+const userSchema = new mongoose.Schema({
+    name: String,
+    password: String,
+    age: Number,
+})
+const GameUser = mongoose.model("gameUser", userSchema);
 app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-    res.render("userMainPage");
-})
-app.get("/hi", function (req, res) {
     res.render("homePage");
 })
-// app.get("/", function (req, res) {
-//     res.render("main", { level: 1, userName: "Satwik Kamath", score: 0, numbers: [3, 6, 5], formPost: "second", options: [{ option: 355, value: 0 }, { option: 368, value: 0 }, { option: 362, value: 0 }, { option: 365, value: 1 }] });
-// })
-
 
 app.post("/checkLoginInfo", function (req, res) {
     receivedName = req.body.name;
     receivedPassword = req.body.password;
 
-
-    if(receivedName=="satwik")
-        res.json({msg: 1});
-    else
-        res.json({msg: 0});
+    GameUser.findOne({ name:receivedName }).then(function (data) {
+        if (data) {
+            if(receivedPassword==data.password)
+                res.json({passwordCorrect: 1,found:1});
+            else
+                res.json({passwordCorrect: 0,found:1});
+        }
+        else {
+            res.json({passwordCorrect: 0,found:0});
+        }
+    })
 })
 
 app.post("/loginAfterCheck",function(req,res){
@@ -34,8 +40,25 @@ app.post("/loginAfterCheck",function(req,res){
     res.render("userMainPage",{userName:userName});
 })
 
-app.post("/signUp",function(req,res){
-    console.log(req.body)
+app.post("/checkSignUpInfo",function(req,res){
+    let receivedName=req.body.name;
+    let receivedPswd=req.body.password;
+    let receivedAge=req.body.userAge;
+    GameUser.findOne({ name:receivedName }).then(function (data) {
+        if (data) {
+            res.json({msg: 1});
+        }
+        else {
+            const user = new GameUser({
+                name: receivedName,
+                                
+                password: receivedPswd,
+                age: receivedAge
+            })
+            user.save();
+            res.json({msg: 0});
+        }
+    })
 })
 
 app.post("/second", function (req, res) {
@@ -46,9 +69,9 @@ app.post("/second", function (req, res) {
     if (ans == "1")
         score++;
 
-
     res.render("main", { level: 2, userName: userName, score: score, numbers: [4, 6, 2, 9], formPost: "third", options: [{ option: 4620, value: 0 }, { option: 4629, value: 1 }, { option: 4649, value: 0 }, { option: 4639, value: 0 }] });
 })
+
 app.post("/third", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
