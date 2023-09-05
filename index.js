@@ -33,6 +33,11 @@ app.post("/loginAfterCheck",function(req,res){
     userName =req.body.userName;
     res.render("userMainPage",{userName:userName});
 })
+
+app.post("/signUp",function(req,res){
+    console.log(req.body)
+})
+
 app.post("/second", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;

@@ -58,28 +58,28 @@
     <div class="form-content">
         <span id="span-signup">&times;</span>
         <h1 class="display-1 modal-head">SIGN UP</h1>
-        <form action="/signup" class="form" method="post">
+        <form class="form" id="signUpForm">
             <div class="form-ele">
                 <label for="name">NAME</label>
-                <input type="text" placeholder="What's your name?">
+                <input type="text" placeholder="What's your name?" name="userName" id="signupName">
             </div>
             <div class="form-ele">
                 <label for="age">AGE</label>
-                <input type="number" placeholder="How old are you?">
+                <input type="number" placeholder="How old are you?" name="userAge" id="signUpAge">
             </div>
             <div class="form-ele">
                 <label for="password">PASSWORD</label>
-                <input type="password" placeholder="number+special character+letters">
+                <input type="password" placeholder="number+special character+letters" name="password" id="signUpPassword">
             </div>
             <div class="form-ele">
-                <label for="password">CONFIRM PASSWORD</label>
-                <input type="password" placeholder="Write it over.">
+                <label for="password" >CONFIRM PASSWORD</label>
+                <input type="password" placeholder="Write it over."  id="signUpcpassword">
             </div>
             <div class="form-ele">
                 <button type="reset" class="reset-ele">RESET</button>
             </div>
             <div class="form-ele">
-                <button type="submit" class="submit-ele ">SUBMIT</button>
+                <button class="submit-ele" id="signUpSubmit">SUBMIT</button>
             </div>
         </form>
     </div>
