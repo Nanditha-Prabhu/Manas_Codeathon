@@ -80,6 +80,7 @@ app.post("/level", function (req, res) {
             if (level == "3")
                 res.render("playground", { level: 3, userName: userName, score: 0, numbers: [5, 2, 3, 9, 1, 8, 7, 4, 6], formPost: "second", options: [{ option: 523918746, value: 1 }, { option: 523918745, value: 0 }, { option: 523918749, value: 0 }, { option: 523918744, value: 0 }] });
 })
+
 app.post("/second", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
@@ -114,6 +115,7 @@ app.post("/third", function (req, res) {
             if (level == "3")
                 res.render("playground", { level: 3, userName: userName, score: score, numbers: [7, 9, 5, 3, 5, 2, 6, 9, 4], formPost: "fourth", options: [{ option: 795352683, value: 0 }, { option: 795352694, value: 1 }, { option: 795352692, value: 0 }, { option: 795352684, value: 0 }] });
 })
+
 app.post("/fourth", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
@@ -292,6 +294,9 @@ app.post("/exit", function (req, res) {
 
 })
 
+app.get("/leaderboard",function(req,res){
+    res.render("leaderboard")
+})
 
 app.listen(3000, function () {
     console.log("Running");
