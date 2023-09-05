@@ -4,10 +4,12 @@
 // modal is the element that pops up from the page
 // for sign up form
 function showModal() {
+    document.getElementById("mynavbar").style.zIndex="-5";
     document.querySelector('.overlay').classList.add('show-overlay');
     document.querySelector('.form-content').classList.add('show-form-content');
 }
 function closeModal() {
+    document.getElementById("mynavbar").style.zIndex="5";
     document.querySelector('.overlay').classList.remove('show-overlay');
     document.querySelector('.form-content').classList.remove('show-form-content');
 }
@@ -17,14 +19,17 @@ var closeBtn = document.querySelector('#span-signup');
 closeBtn.addEventListener('click', closeModal);
 
 // for login form
+console.log(document.getElementById('mynavbar'));
 function showModal2() {
     // first show overlay
+    document.getElementById('mynavbar').style.zIndex="-5";
     document.querySelector('.overlay2').classList.add('show-overlay');
     // then content
     document.querySelector('.form-content2').classList.add('show-form-content');
 }
 function closeModal2() {
     // first show overlay
+    document.getElementById("mynavbar").style.zIndex="5";
     document.querySelector('.overlay2').classList.remove('show-overlay');
     // then content
     document.querySelector('.form-content2').classList.remove('show-form-content');

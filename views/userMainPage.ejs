@@ -25,7 +25,7 @@
 
 <body>
     <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg fixed-top" id="mynavbar">
         <div class="container-fluid ">
             <img src="image_files/brain-logo.png" alt="Logo" class="main-logo">
             <a class="navbar-brand">The Memory Quest</a>
@@ -38,9 +38,7 @@
                     <a class="nav-link" aria-current="page" href="#about">Home</a>
                     <a class="nav-link" href="#">Leaderboard</a>
                 </div>
-                <div class="name align-right">
-                    <%= userName %>
-                </div>
+               
             </div>
         </div>
     </nav>
@@ -49,6 +47,7 @@
     <div class="intro img-fluid blur">
         <h1 class="display-1">THE MEMORY QUEST</h1>
         <h3>Unlock Your Memory Master!!</h3>
+        <h3 style="color:#EEB868; text-shadow:0px 0px 3px black;">Player Name: <%= userName %></h3>
     </div>
 
 
@@ -56,17 +55,28 @@
     <div class="about" id="about">
         <img src="image_files/princess.png" class="float-start about-imgs about-flex-ele" alt="princess">
         <div class="levels">
-            <form action="/level1" method="get">
+            <form action="/level" method="post">
+                <input type="text" name="userName" id="" value="<%= userName %>" hidden>
+                <input type="text" name="level" value="1" id="" hidden>
                 <button class="level">
-                    LEVEL 1
+                    LEVEL 1 <br>(Easy)
                 </button>
             </form>
-            <button class="level">
-                LEVEL 2
-            </button>
-            <button class="level">
-                LEVEL 3
-            </button>
+            <form action="/level" method="post">
+                <input type="text" name="userName" id="" value="<%= userName %>" hidden>
+                <input type="text" name="level" value="2" id="" hidden>
+                <button class="level">
+                    LEVEL 2 <br>(Medium)
+                </button>
+            </form>
+            <form action="/level" method="post">
+                <input type="text" name="userName" id="" value="<%= userName %>" hidden>
+                <input type="text" name="level" value="3" id="" hidden>
+                <button class="level">
+                    LEVEL 3 <br>(Hard)
+                </button>
+            </form>
+
         </div>
         <img src="image_files/mario2-removebg-preview.png" class="float-end about-imgs about-flex-ele" alt="mario">
     </div>

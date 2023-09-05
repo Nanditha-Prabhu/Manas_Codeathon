@@ -50,6 +50,7 @@
                 <h2>
                     <form action="/reset" method="post">
                         <input type="text" name="userName" value="<%= userName %>" id="" hidden>
+                        <input type="text" name="level" id="" value="<%= level %>" hidden>
                         <button class="resetBtn" type="submit">Restart</button>
                     </form>
                 </h2>
@@ -72,6 +73,7 @@
                     <% options.forEach(element=> { %>
 
                         <form action="/<%= formPost %>" method="post">
+                            <input type="text" name="level" value="<% level %>" id=""hidden>
                             <input type="text" name="ans" value="<%= element.value %>" id="" hidden>
                             <input type="text" name="userName" value="<%= userName %>" id="" hidden>
                             <input type="text" name="score" value="<%= score %>" id="" hidden>

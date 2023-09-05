@@ -2,7 +2,6 @@
 /* start green #52b69a */
 /* end yellow #d9ed92 */
 
-
 /* initialization */
 *{
     margin: 0;
@@ -171,7 +170,7 @@ body {
 
 /* introduction section */
 .intro {
-    background-image: url("image_files/super-mario-scene-4.jpg");
+    background-image: url("../image_files/super-mario-scene-4.jpg");
     background-repeat: repeat-x;
     font-family: 'Orbitron', sans-serif;
     display: flex;
@@ -216,7 +215,6 @@ body {
 
 #play-now-btn:hover {
     background-color:#d69c45;
-
 }
 
 /* about us section */
@@ -265,7 +263,7 @@ body {
     text-shadow: 0px 0px 10px white;
     font-family: 'Orbitron', sans-serif;
     color: #184e77;
-    margin: 30px 0px;    
+    margin: 30px 0px;
 }
 
 .instruct-text-ele {
@@ -333,36 +331,6 @@ footer {
     transition: 0.7s;
 }
 
-.levels{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.level{
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;;
-    background-color: #184e77;
-    margin: 15px;
-    height: 25vh;
-    width: 18vw;
-    border-radius: 20px;
-    font-size:xx-large;
-    color: #fff;
-    box-shadow: 0px 0px 15px black;
-    transition: all 0.3s ease-in-out;
-}
-
-.level:hover{
-    transform: scale(1.1);
-}
-
-
 /* media queries for responsiveness */
 @media screen and (max-width: 325px){
     .instruct-text h2{
@@ -411,16 +379,6 @@ footer {
         height: auto;
         margin: 0px auto;
     }
-    .levels{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    .level{
-        width: 80vw;
-    }
 }
 
 @media screen and (max-width: 1070px){
@@ -437,13 +395,5 @@ footer {
     .about-imgs {
         width: auto;
         height: 30vh;
-    }
-}
-
-@media screen and (max-width: 325px){
-    .instruct-text h2{
-        font-size: large;
-        
-        
     }
 }
