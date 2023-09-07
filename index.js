@@ -133,6 +133,7 @@ app.post("/fourth", function (req, res) {
             if (level == "3")
                 res.render("playground", { level: 3, userName: userName, score: score, numbers: [4, 8, 1, 9, 6, 4, 5, 2, 5], formPost: "fifth", options: [{ option: 481964525, value: 1 }, { option: 481964515, value: 0 }, { option: 481964526, value: 0 }, { option: 481964517, value: 0 }] });
 })
+
 app.post("/fifth", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
@@ -149,6 +150,7 @@ app.post("/fifth", function (req, res) {
             if (level == "3")
                 res.render("playground", { level: 3, userName: userName, score: score, numbers: [2, 1, 4, 5, 2, 6, 5, 2, 1], formPost: "sixth", options: [{ option: 214526520, value: 0 }, { option: 214526519, value: 0 }, { option: 214526518, value: 0 }, { option: 214526521, value: 1 }] });
 })
+
 app.post("/sixth", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
@@ -182,6 +184,7 @@ app.post("/seventh", function (req, res) {
             if (level == "3")
                 res.render("playground", { level: 3, userName: userName, score: score, numbers: [4, 4, 6, 5, 8, 4, 1, 9, 6], formPost: "eigth", options: [{ option: 446584199, value: 0 }, { option: 446584198, value: 0 }, { option: 446584196, value: 1 }, { option: 446584197, value: 0 }] });
 })
+
 app.post("/eigth", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
@@ -198,6 +201,7 @@ app.post("/eigth", function (req, res) {
             if (level == "3")
                 res.render("playground", { level: 3, userName: userName, score: score, numbers: [8, 4, 8, 5, 2, 4, 0, 8, 8], formPost: "ninth", options: [{ option: 848524088, value: 1 }, { option: 848524087, value: 0 }, { option: 848524084, value: 0 }, { option: 848524086, value: 0 }] });
 })
+
 app.post("/ninth", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
@@ -214,6 +218,7 @@ app.post("/ninth", function (req, res) {
             if (level == "3")
                 res.render("playground", { level: 3, userName: userName, score: score, numbers: [3, 6, 3, 3, 4, 6, 8, 9, 7], formPost: "tenth", options: [{ option: 363346895, value: 0 }, { option: 363346894, value: 0 }, { option: 363346897, value: 1 }, { option: 363346896, value: 0 }] });
 })
+
 app.post("/tenth", function (req, res) {
     userName = req.body.userName;
     ans = req.body.ans;
@@ -305,6 +310,7 @@ app.get("/leaderboard", function (req, res) {
         res.render("leaderboard", { users: data });
     })
 })
+
 app.post("/personal", function (req, res) {
     let userName = req.body.userName;
 
@@ -313,6 +319,7 @@ app.post("/personal", function (req, res) {
         res.render("personal", { s1: data.level1, s2: data.level2, s3: data.level3 })
     })
 })
+
 app.listen(3000, function () {
     console.log("Running");
 })
