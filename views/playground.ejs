@@ -25,9 +25,9 @@
     <div class="playground">
         <div class="game-info">
             <div class="row text-center">
-            <div class="col-6 font-black">
+            <div class="col-6 font-black d-flex flex-column align-items-start">
                 <h2>
-                    <%= userName %>
+                   <img src="avatars/doraemon_avatar.png" alt="your avatar" srcset="" class="avatar"> <%= userName %>
                 </h2>
                 <h2>
                     Score: <%= score %>
@@ -35,7 +35,7 @@
 
             </div>
 
-            <div class="col-6 ">
+            <div class="col-6 d-flex flex-column align-items-end">
                 <h2 class="font-black">
                     Level <%= level %>
                 </h2>
