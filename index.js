@@ -21,6 +21,7 @@ app.get("/motivation", function (req, res) {
     res.render("motivation")
 })
 
+
 app.get("/", function (req, res) {
     res.render("homePage");
 })
